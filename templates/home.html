@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Forest Fire Input</title>
+	</head>
+	<body>
+		<h1>Input Forest Fire Features </h1>
+	<!-- HTML-only form: posts to predict_datapoint route (change action as needed) -->
+	<form action="{{ url_for('predict_datapoint') }}" method="post" >
+			<label for="Temperature">Temperature</label><br>
+			<input type="number" id="Temperature" name="Temperature" step="0.1" placeholder="e.g. 23.5" required><br><br>
+
+			<label for="RH">RH (Relative Humidity)</label><br>
+			<input type="number" id="RH" name="RH" step="0.1" placeholder="e.g. 35.0" required><br><br>
+
+			<label for="Ws">Ws (Wind speed)</label><br>
+			<input type="number" id="Ws" name="Ws" step="0.01" placeholder="e.g. 1.5" required><br><br>
+
+			<label for="Rain">Rain</label><br>
+			<input type="number" id="Rain" name="Rain" step="0.01" placeholder="e.g. 0.0" required><br><br>
+
+			<label for="FFMC">FFMC</label><br>
+			<input type="number" id="FFMC" name="FFMC" step="0.01" placeholder="e.g. 92.3" required><br><br>
+
+			<label for="DMC">DMC</label><br>
+			<input type="number" id="DMC" name="DMC" step="0.01" placeholder="e.g. 120.5" required><br><br>
+
+			
+			<label for="ISI">ISI</label><br>
+			<input type="number" id="ISI" name="ISI" step="0.01" placeholder="e.g. 7.4" required><br><br>
+
+			<label for="Classes">Classes</label><br>
+            <input type="number" id="Classes" name="Classes" step="0.01" placeholder="e.g. 7.4" required><br><br>
+			<label for="Region">Region</label><br>
+			<input type="number" id="Region" name="Region" step="0.01" placeholder="e.g. 7.4" required><br><br>
+
+
+			<button type="submit" class="btn btn-primary btn-block btn-large" >Predict</button>
+		</form>
+        <h2> THE FWI(Forest Weather Index) Prediction is: {{results}} </h2>
+	</body>
+</html>
+
